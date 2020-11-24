@@ -6,6 +6,8 @@
 
 const cafeList = document.querySelector('#cafe-list');
 
+const form = document.querySelector('#add-cafe-form');
+
 
 //create element and render cafe 
 function renderCafe(doc)
@@ -25,7 +27,7 @@ function renderCafe(doc)
 
 }
 
-
+// -------------------------Getting Data-------------------
 //get is asynchronus function so untill the data we get we have to w8 then trigger then function and then function will execute after the data is exccute
 db.collection('cafes').get().then(
     //snapshot basically the representation  of diff data inside the class
@@ -40,3 +42,15 @@ db.collection('cafes').get().then(
 
 
 )
+//-----------------------Saving Data---------------------------
+form.addEventListener('submit',(e) => {
+
+e.preventDefault();
+db.collection('cafes').add({
+    name :form.name.value,
+    city:form.city.value,
+});
+
+form.name.value = '';
+form.city.value = '';
+})
