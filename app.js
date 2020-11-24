@@ -39,8 +39,10 @@ function renderCafe(doc)
 // -------------------------Getting Data-------------------
 //get is asynchronus function so untill the data we get we have to w8 then trigger then function and then function will execute after the data is exccute
 
-// we can perform any query > < == while we fetch data from the browser
-db.collection('cafes').where('city', '==', 'Dhaka' ).get().then(
+// we can perform any query > < == while we fetch data from the browser useing where()
+// we can order data by using orderBy('name') that order cafe name alphabetically ,
+//when we want to perform complex query like where city == dhaka then order it by name , then console through error for indexing , just click on the error and build the index for that query
+db.collection('cafes').where('city', '==', 'Dhaka').orderBy('name' ).get().then(
     //snapshot basically the representation  of diff data inside the class
  (snapshot)=>
  {
