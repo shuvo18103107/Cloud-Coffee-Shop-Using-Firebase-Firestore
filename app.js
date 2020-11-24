@@ -95,3 +95,21 @@ db.collection('cafes').orderBy('city').onSnapshot(
           )
     }
 )
+/* update any data 
+
+db.collection('cafes').doc('MFfWzwPfNg293iheKM67').update({name : 'London Cafe' })
+db.collection('cafes').doc('MFfWzwPfNg293iheKM67').set({name : 'London Cafe' })
+
+Diff between update and set ? 
+update just update the particular field but set completely override that doc 
+like here set name : london cafe also override the city output just londoncafe and city field will be null
+
+
+
+
+
+
+
+
+
+*/
