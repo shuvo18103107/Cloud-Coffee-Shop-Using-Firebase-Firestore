@@ -42,19 +42,19 @@ function renderCafe(doc)
 // we can perform any query > < == while we fetch data from the browser useing where()
 // we can order data by using orderBy('name') that order cafe name alphabetically ,
 //when we want to perform complex query like where city == dhaka then order it by name , then console through error for indexing , just click on the error and build the index for that query
-db.collection('cafes').where('city', '==', 'Dhaka').orderBy('name' ).get().then(
-    //snapshot basically the representation  of diff data inside the class
- (snapshot)=>
- {
-         snapshot.docs.forEach(doc => {
-            renderCafe(doc);
+// db.collection('cafes').where('city', '==', 'Dhaka').orderBy('name' ).get().then(
+//     //snapshot basically the representation  of diff data inside the class
+//  (snapshot)=>
+//  {
+//          snapshot.docs.forEach(doc => {
+//             renderCafe(doc);
              
-         });
- }
+//          });
+//  }
 
 
 
-)
+// )
 //-----------------------Saving Data---------------------------
 form.addEventListener('submit',(e) => {
 
@@ -66,4 +66,32 @@ db.collection('cafes').add({
 
 form.name.value = '';
 form.city.value = '';
-})
+});
+
+/* ------------Real time listener-----------------
+when something changes in collection it will trigger onsnapshots function
+*/
+
+db.collection('cafes').orderBy('city').onSnapshot(
+
+    snapshot => 
+    {
+        let changes = snapshot.docChanges();
+          
+          changes.forEach(
+              change => {
+                 if(change.type == 'added')
+                 {
+                     renderCafe(change.doc);
+                 }
+                 else if (change.type == 'removed')
+                 {
+                     let li = cafeList.querySelector('[data-id =' + change.doc.id + ']');
+                     cafeList.removeChild(li);
+                 }
+                  
+                 
+              }
+          )
+    }
+)
