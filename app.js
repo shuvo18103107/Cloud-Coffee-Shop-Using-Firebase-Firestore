@@ -38,7 +38,9 @@ function renderCafe(doc)
 
 // -------------------------Getting Data-------------------
 //get is asynchronus function so untill the data we get we have to w8 then trigger then function and then function will execute after the data is exccute
-db.collection('cafes').get().then(
+
+// we can perform any query > < == while we fetch data from the browser
+db.collection('cafes').where('city', '==', 'Dhaka' ).get().then(
     //snapshot basically the representation  of diff data inside the class
  (snapshot)=>
  {
