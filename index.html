@@ -1,6 +1,14 @@
 <html>
 
 <head>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,6 +23,32 @@
         <ul id="cafe-list"></ul>
 
     </div>
+
+
+
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyA5lnAG_8w5jTqYbxayDt7J5KHuki1g3sY",
+            authDomain: "coffee-firestore-project.firebaseapp.com",
+            databaseURL: "https://coffee-firestore-project.firebaseio.com",
+            projectId: "coffee-firestore-project",
+            storageBucket: "coffee-firestore-project.appspot.com",
+            messagingSenderId: "327058170231",
+            appId: "1:327058170231:web:0735d506e114c600c20172",
+            measurementId: "G-0WC9RDRHWQ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // For interacting with  database
+        const db = firebase.firestore();
+        // avoiding error and  warning in firebase console
+
+        db.settings({ timestampInSnapshots: true })
+        firebase.analytics();
+    </script>
 
     <script src="app.js"></script>
 </body>
