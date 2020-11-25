@@ -1,6 +1,5 @@
 # 🔥 Cloud-Coffee-Shop-Using-Firebase-Firestore 🔥
-##This is a practice project for Firebase Firestore 
- Here i learned How to setting up firebase⚡️ and necessary sdk for particular features of firebase
+This is a practice project for Firebase Firestore and here i learned How to setting up firebase⚡️ and necessary sdk for particular features of firebase
 - ⚡️Get document from firestore and render it on browser
 - ✨ save Data to our Firestore database 
 - 📝 delete data from the database.
