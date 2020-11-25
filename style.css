@@ -2,12 +2,152 @@ body {
   background-image: url('images/pexels-photo-1111321.jpeg');
   font-family: ubuntu;
 }
+.coffeeloader {
+  margin-left: 29em;
+
+  margin-bottom: -2em;
+}
+.cupcontainer {
+  width: 60px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 50px;
+  left: 5px;
+}
+.cupcontainer .cup {
+  border-bottom: 40px solid #8b6139;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 40px;
+  transform: rotate(180deg);
+  position: relative;
+  left: -3px;
+  top: 5px;
+}
+.cupcontainer .handle {
+  width: 18px;
+  height: 10px;
+  border: 6px solid #8b6139;
+  position: relative;
+  top: -30px;
+  left: 35px;
+}
+.cupcontainer .glance {
+  border-bottom: 25px solid #af7a48;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  width: 2px;
+  transform: rotate(180deg);
+  position: absolute;
+  top: 13px;
+  left: 10px;
+}
+.plate {
+  background: #8b6139;
+  width: 100px;
+  height: 6px;
+  border-radius: 3px;
+  position: relative;
+  top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bottom {
+  background: #8b6139;
+  width: 60px;
+  height: 6px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: relative;
+  top: 45px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.steam {
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 50px;
+  left: 5px;
+}
+.smoke1 {
+  width: 6px;
+  height: 30px;
+  float: left;
+  margin-right: 6px;
+  margin-left: 4px;
+  border-radius: 3px;
+}
+.smoke1::before,
+.smoke1::after {
+  content: '';
+  background: #8b6139;
+  position: absolute;
+  animation: load 0.9s infinite reverse ease-in-out;
+  border-radius: 3px;
+}
+.smoke2 {
+  width: 6px;
+  height: 15px;
+  float: left;
+  margin-right: 6px;
+  margin-left: 4px;
+  border-radius: 3px;
+}
+.smoke2::before,
+.smoke2::after {
+  content: '';
+  background: #8b6139;
+  position: absolute;
+  animation: load 0.6s infinite reverse ease-in-out;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+.smoke3 {
+  width: 6px;
+  height: 30px;
+  float: left;
+  margin-right: 6px;
+  margin-left: 4px;
+  border-radius: 3px;
+}
+.smoke3::before,
+.smoke3::after {
+  content: '';
+  background: #8b6139;
+  position: absolute;
+  animation: load 0.9s infinite 0.5s reverse ease-in-out;
+  border-radius: 3px;
+}
+@keyframes load {
+  0% {
+    top: 0;
+    height: 30px;
+    width: 6px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 29px;
+    height: 15px;
+    width: 6px;
+    opacity: 0;
+  }
+}
 
 h1 {
   color: #6f4e37;
   font-size: 64px;
   letter-spacing: 2px;
-  margin-top: 80px;
+  margin-top: 10px;
   text-align: center;
 }
 
